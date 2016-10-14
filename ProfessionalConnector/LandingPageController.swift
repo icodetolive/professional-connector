@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LandingPageViewController.swift
 //  ProfessionalConnector
 //
 //  Created by Sugandha Naolekar on 10/13/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LandingPageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
