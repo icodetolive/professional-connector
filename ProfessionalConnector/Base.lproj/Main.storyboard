@@ -31,7 +31,10 @@
                                     <constraint firstAttribute="height" constant="30" id="LvT-dc-Gut"/>
                                     <constraint firstAttribute="width" constant="116" id="N5U-nN-Ve3"/>
                                 </constraints>
-                                <state key="normal" title="View Contacts"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="View Contacts">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -42,10 +45,14 @@
                             <constraint firstItem="EXc-A8-JFw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xlf-aB-y3m"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnLinkedInSignIn" destination="EXc-A8-JFw" id="wIu-jP-qLe"/>
+                        <outlet property="btnViewContacts" destination="5is-yE-c7Y" id="CC7-sK-gUt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="203" y="242"/>
+            <point key="canvasLocation" x="205" y="174"/>
         </scene>
     </scenes>
     <resources>

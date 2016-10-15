@@ -10,6 +10,10 @@ import UIKit
 
 class LandingPageViewController: UIViewController {
 
+    @IBOutlet weak var btnLinkedInSignIn: UIButton!
+    
+    @IBOutlet weak var btnViewContacts: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
