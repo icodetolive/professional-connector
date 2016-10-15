@@ -1,10 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Wt2-JQ-PSA">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="gdy-hY-J6M">
+            <objects>
+                <navigationController id="Wt2-JQ-PSA" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="A3E-Ih-Ni9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="pvf-nM-OMf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zku-m6-4qI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1201" y="-167"/>
+        </scene>
         <!--Landing Page View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -17,16 +33,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXc-A8-JFw" userLabel="Linkedin Sign In">
-                                <rect key="frame" x="188" y="108" width="225" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="9sA-XL-58r"/>
-                                    <constraint firstAttribute="width" constant="225" id="y5i-yu-BLK"/>
-                                </constraints>
-                                <state key="normal" title="sd" image="Sign-In-Small---Active"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5is-yE-c7Y" userLabel="Profile Info View">
-                                <rect key="frame" x="233" y="192" width="134" height="30"/>
+                                <rect key="frame" x="233" y="236" width="134" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="134" id="9wp-F6-SAd"/>
                                     <constraint firstAttribute="height" constant="30" id="LvT-dc-Gut"/>
@@ -35,9 +43,23 @@
                                 <state key="normal" title="View Profile Info">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="7KG-lr-Lga" kind="show" id="g54-lL-dyd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXc-A8-JFw" userLabel="Linkedin Sign In">
+                                <rect key="frame" x="188" y="152" width="225" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="9sA-XL-58r"/>
+                                    <constraint firstAttribute="width" constant="225" id="y5i-yu-BLK"/>
+                                </constraints>
+                                <state key="normal" image="Sign-In-Small---Active"/>
+                                <connections>
+                                    <segue destination="Mat-gh-OaA" kind="presentation" identifier="LinkedinSignInViewController" id="eSE-HD-pmI"/>
+                                </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="EXc-A8-JFw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="88" id="RGV-7l-sh4"/>
                             <constraint firstItem="5is-yE-c7Y" firstAttribute="centerX" secondItem="EXc-A8-JFw" secondAttribute="centerX" id="alC-To-aXm"/>
@@ -45,6 +67,7 @@
                             <constraint firstItem="EXc-A8-JFw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xlf-aB-y3m"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="zgO-Rf-x2L"/>
                     <connections>
                         <outlet property="btnLinkedInSignIn" destination="EXc-A8-JFw" id="wIu-jP-qLe"/>
                         <outlet property="btnViewContacts" destination="5is-yE-c7Y" id="CC7-sK-gUt"/>
@@ -52,7 +75,59 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="205" y="174"/>
+            <point key="canvasLocation" x="-510" y="-167"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="0nu-OU-5aS">
+            <objects>
+                <viewController id="7KG-lr-Lga" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sb2-50-Nus"/>
+                        <viewControllerLayoutGuide type="bottom" id="hag-oy-qYu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Mok-cS-uwW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="profiler" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XhQ-Gb-jf3">
+                                <rect key="frame" x="104" y="84" width="55" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NRv-PZ-Egy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="209" y="228"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="d8D-Wr-4xy">
+            <objects>
+                <viewController id="Mat-gh-OaA" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HKd-bW-17b"/>
+                        <viewControllerLayoutGuide type="bottom" id="Fj5-Jf-kNF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QdL-EC-lMu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="web view" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5S-2P-sV7">
+                                <rect key="frame" x="141" y="460" width="71" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kBi-vH-4n0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="209" y="-437"/>
         </scene>
     </scenes>
     <resources>
