@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXc-A8-JFw" userLabel="LinkedinSignIn">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXc-A8-JFw" userLabel="Linkedin Sign In">
                                 <rect key="frame" x="188" y="108" width="225" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="9sA-XL-58r"/>
@@ -25,14 +25,14 @@
                                 </constraints>
                                 <state key="normal" title="sd" image="Sign-In-Small---Active"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5is-yE-c7Y">
-                                <rect key="frame" x="242" y="192" width="116" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5is-yE-c7Y" userLabel="Profile Info View">
+                                <rect key="frame" x="233" y="192" width="134" height="30"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="134" id="9wp-F6-SAd"/>
                                     <constraint firstAttribute="height" constant="30" id="LvT-dc-Gut"/>
-                                    <constraint firstAttribute="width" constant="116" id="N5U-nN-Ve3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="View Contacts">
+                                <state key="normal" title="View Profile Info">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
