@@ -12,11 +12,24 @@ struct Constants {
     
     struct Linkedin {
         static let BaseURL = "https://www.linkedin.com/uas/oauth2"
+       
         static let AuthorizationEndPoint = "authorization"
+        
         static let AccessTokenEndPoint = "accessToken"
+        
         static let RedirectURI = "redirect_uri"
+        
         static let RedirectURL = "https://www.pretentiousgeek.me/oauth"
+        
         static let escapedRedirectURL = Constants.Linkedin.RedirectURL.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.alphanumericCharacterSet())!
+        
+        static let ClientID = "client_id"
+        
+        static let ClientSecret = "client_secret"
+        
+        static let APIKey = "Your_API_Key"
+        
+        static let APISecret = "Your_API_Secret"
     }
     
     struct LinkedinAuthorization {
@@ -24,10 +37,6 @@ struct Constants {
         
         struct ParameterKeys {
             static let ResponseType = "response_type"
-            
-            static let APIKey = "client_id"
-            
-            static let APISecret = "client_secret"
             
             static let State = "state"
             
@@ -40,10 +49,6 @@ struct Constants {
         struct ParameterValues {
             
             static let ResponseType = "code"
-            
-            static let APIKey = "Your_API_Key"
-            
-            static let APISecret = "Your_API_Secret"
             
             static let State = "linkedin\(Int(NSDate().timeIntervalSince1970))"
             
@@ -58,6 +63,15 @@ struct Constants {
     
     struct LinkedinAccessToken {
         static let URL = Constants.Linkedin.BaseURL+"/"+Constants.Linkedin.AccessTokenEndPoint
+        
+        struct ParameterKeys {
+            static let GrantType = "grant_type"
+            static let Code = "code"
+        }
+        
+        struct ParameterValues {
+            static let AuthorizationCode = "authorization_code"
+        }
     }
 }
 
