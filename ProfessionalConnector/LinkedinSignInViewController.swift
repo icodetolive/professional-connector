@@ -84,6 +84,65 @@ class LinkedinSignInViewController: UIViewController, UIWebViewDelegate {
         postParams += Constants.Linkedin.ClientID+"="+Constants.Linkedin.APIKey+"&"
         postParams += Constants.Linkedin.ClientSecret+"="+Constants.Linkedin.APISecret+"&"
         
+        // Convert the POST parameters into a NSData object since POST parameters cannot be sent as String values
+        let postData = postParams.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        // Initialize a mutable URL request object using the access token endpoint URL string.
+        let request = NSMutableURLRequest(URL: NSURL(string: Constants.LinkedinAccessToken.URL)!)
+        
+        // Indicate that we're about to make a POST request.
+        request.HTTPMethod = "POST"
+        
+        // Set the HTTP body using the postData object created above.
+        request.HTTPBody = postData
+        
+        // Add the required HTTP header field.
+        request.addValue("application/x-www-form-urlencoded;", forHTTPHeaderField: "Content-Type")
+        
+        // Initialize a NSURLSession object.
+        let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
+        
+        // Make the request.
+        let task: NSURLSessionDataTask = session.dataTaskWithRequest(request) { (data, response, error) -> Void in
+            
+            if error != nil {
+                print(error)
+            }
+            
+            // Get the HTTP status code of the request.
+            let statusCode = (response as! NSHTTPURLResponse).statusCode
+            
+            print("--\(statusCode)")
+            //handle the case for status Code = 401 and redirect the user to start the authorization process again.
+            //Also handle the xpiry date issue. Before the seconds become 0, you should handle the authentication process all over again
+            
+            if statusCode == 200 {
+                
+                print("success")
+                // Convert the received JSON data into a dictionary.
+                do {
+                    let dataDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers)
+                    
+                    let accessToken = dataDictionary["access_token"] as! String
+                    let accessTokenExpiry = dataDictionary["expires_in"] as AnyObject!
+                    
+                    print("Access token: \(accessToken)--\(accessTokenExpiry)")
+                    
+                    NSUserDefaults.standardUserDefaults().setObject(accessToken, forKey: "LIAccessToken")
+                    NSUserDefaults.standardUserDefaults().setObject(accessTokenExpiry, forKey: "LIAccessTokenExpiry")
+                    NSUserDefaults.standardUserDefaults().synchronize()
+                    
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        self.dismissViewControllerAnimated(true, completion: nil)
+                    })
+                }
+                catch {
+                    print("Could not convert JSON data into a dictionary.")
+                }
+            }
+        }
+        
+        task.resume()
     }
 
 }
