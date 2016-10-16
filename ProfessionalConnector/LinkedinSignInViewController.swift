@@ -25,8 +25,8 @@ class LinkedinSignInViewController: UIViewController, UIWebViewDelegate {
                 
         var authorizationURLString = Constants.LinkedinAuthorization.URL+"?"
         authorizationURLString += Constants.LinkedinAuthorization.ParameterKeys.ResponseType+"="+Constants.LinkedinAuthorization.ParameterValues.ResponseType+"&"
-        authorizationURLString += Constants.LinkedinAuthorization.ParameterKeys.APIKey+"="+Constants.LinkedinAuthorization.ParameterValues.APIKey+"&"
-        authorizationURLString += Constants.LinkedinAuthorization.ParameterKeys.RedirectURI+"="+Constants.LinkedinAuthorization.ParameterValues.RedirectURL+"&"
+        authorizationURLString += Constants.Linkedin.ClientID+"="+Constants.Linkedin.APIKey+"&"
+        authorizationURLString += Constants.Linkedin.RedirectURI+"="+Constants.Linkedin.escapedRedirectURL+"&"
         authorizationURLString += Constants.LinkedinAuthorization.ParameterKeys.State+"="+Constants.LinkedinAuthorization.ParameterValues.State+"&"
         authorizationURLString += Constants.LinkedinAuthorization.ParameterKeys.Scope+"="+Constants.LinkedinAuthorization.ParameterValues.BasicScope+","+Constants.LinkedinAuthorization.ParameterValues.EmailScope+"&"
         authorizationURLString += Constants.LinkedinAuthorization.ParameterKeys.Format+"="+Constants.LinkedinAuthorization.ParameterValues.JSONFormat
@@ -43,7 +43,7 @@ class LinkedinSignInViewController: UIViewController, UIWebViewDelegate {
     //    A response containing authorization code somehwat looks like this:
     
     //"Your_redirect_URI?code="returned_auth_code&state="state_set_constants"
-    func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+   func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         
         //get access to the URL through the request parameter
         let url = request.URL!
@@ -75,6 +75,16 @@ class LinkedinSignInViewController: UIViewController, UIWebViewDelegate {
     }
     
     
+    func requestForAccessToken(authorizationCode: String) {
+        
+        // Set the POST parameters.
+        var postParams = Constants.LinkedinAccessToken.ParameterKeys.GrantType+"="+Constants.LinkedinAccessToken.ParameterValues.AuthorizationCode+"&"
+        postParams += Constants.LinkedinAccessToken.ParameterKeys.Code+"="+authorizationCode+"&"
+        postParams += Constants.Linkedin.RedirectURI+"="+Constants.Linkedin.escapedRedirectURL+"&"
+        postParams += Constants.Linkedin.ClientID+"="+Constants.Linkedin.APIKey+"&"
+        postParams += Constants.Linkedin.ClientSecret+"="+Constants.Linkedin.APISecret+"&"
+        
+    }
 
 }
 
