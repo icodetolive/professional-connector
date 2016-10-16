@@ -102,7 +102,7 @@
         <!--Linkedin Sign In View Controller-->
         <scene sceneID="d8D-Wr-4xy">
             <objects>
-                <viewController id="Mat-gh-OaA" userLabel="Linkedin Sign In View Controller" sceneMemberID="viewController">
+                <viewController id="Mat-gh-OaA" userLabel="Linkedin Sign In View Controller" customClass="LinkedinSignInViewController" customModule="ProfessionalConnector" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HKd-bW-17b"/>
                         <viewControllerLayoutGuide type="bottom" id="Fj5-Jf-kNF"/>
@@ -136,6 +136,9 @@
                             <constraint firstItem="pJn-8R-8lC" firstAttribute="top" secondItem="QdL-EC-lMu" secondAttribute="topMargin" id="smH-tE-vuf"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="XbM-g5-OQa" id="hQn-yv-Rzl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kBi-vH-4n0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

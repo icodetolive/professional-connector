@@ -14,6 +14,8 @@
 		5BFF44301DB09E090078D74B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BFF442E1DB09E090078D74B /* LaunchScreen.storyboard */; };
 		5BFF443B1DB09E0A0078D74B /* ProfessionalConnectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFF443A1DB09E0A0078D74B /* ProfessionalConnectorTests.swift */; };
 		5BFF44461DB09E0A0078D74B /* ProfessionalConnectorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFF44451DB09E0A0078D74B /* ProfessionalConnectorUITests.swift */; };
+		5BFF44541DB32D130078D74B /* LinkedinSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFF44531DB32D120078D74B /* LinkedinSignInViewController.swift */; };
+		5BFF44561DB335B30078D74B /* LinkedinConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFF44551DB335B30078D74B /* LinkedinConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		5BFF44411DB09E0A0078D74B /* ProfessionalConnectorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProfessionalConnectorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BFF44451DB09E0A0078D74B /* ProfessionalConnectorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionalConnectorUITests.swift; sourceTree = "<group>"; };
 		5BFF44471DB09E0A0078D74B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BFF44531DB32D120078D74B /* LinkedinSignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkedinSignInViewController.swift; sourceTree = "<group>"; };
+		5BFF44551DB335B30078D74B /* LinkedinConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkedinConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				5BFF442C1DB09E090078D74B /* Assets.xcassets */,
 				5BFF442E1DB09E090078D74B /* LaunchScreen.storyboard */,
 				5BFF44311DB09E090078D74B /* Info.plist */,
+				5BFF44531DB32D120078D74B /* LinkedinSignInViewController.swift */,
+				5BFF44551DB335B30078D74B /* LinkedinConstants.swift */,
 			);
 			path = ProfessionalConnector;
 			sourceTree = "<group>";
@@ -260,7 +266,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BFF44281DB09E090078D74B /* LandingPageController.swift in Sources */,
+				5BFF44561DB335B30078D74B /* LinkedinConstants.swift in Sources */,
 				5BFF44261DB09E090078D74B /* AppDelegate.swift in Sources */,
+				5BFF44541DB32D130078D74B /* LinkedinSignInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

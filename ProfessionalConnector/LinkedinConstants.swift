@@ -13,10 +13,6 @@ struct Constants {
     struct Linkedin {
         static let BaseURL = "https://www.linkedin.com/uas/oauth2"
        
-        static let AuthorizationEndPoint = "authorization"
-        
-        static let AccessTokenEndPoint = "accessToken"
-        
         static let RedirectURI = "redirect_uri"
         
         static let RedirectURL = "https://www.pretentiousgeek.me/oauth"
@@ -33,7 +29,10 @@ struct Constants {
     }
     
     struct LinkedinAuthorization {
-        static let URL = Constants.Linkedin.BaseURL+"/"+Constants.Linkedin.AuthorizationEndPoint
+        
+        static let EndPoint = "authorization"
+        
+        static let URL = Constants.Linkedin.BaseURL+"/"+Constants.LinkedinAuthorization.EndPoint
         
         struct ParameterKeys {
             static let ResponseType = "response_type"
@@ -62,7 +61,10 @@ struct Constants {
     }
     
     struct LinkedinAccessToken {
-        static let URL = Constants.Linkedin.BaseURL+"/"+Constants.Linkedin.AccessTokenEndPoint
+        
+        static let EndPoint = "accessToken"
+        
+        static let URL = Constants.Linkedin.BaseURL+"/"+Constants.LinkedinAccessToken.EndPoint
         
         struct ParameterKeys {
             static let GrantType = "grant_type"

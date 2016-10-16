@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LandingPageViewController.swift
 //  ProfessionalConnector
 //
 //  Created by Sugandha Naolekar on 10/13/16.
