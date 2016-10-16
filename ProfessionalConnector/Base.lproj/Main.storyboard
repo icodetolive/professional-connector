@@ -44,6 +44,9 @@
                                 <state key="normal" title="View Profile Info">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="disabled">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="7KG-lr-Lga" kind="show" identifier="viewLinkedInProfile" id="g54-lL-dyd"/>
                                 </connections>

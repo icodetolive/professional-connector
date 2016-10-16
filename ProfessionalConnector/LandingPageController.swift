@@ -12,17 +12,26 @@ class LandingPageViewController: UIViewController {
     
     
     
-
+    @IBOutlet weak var btnLinkedInSignIn: UIButton!
+    
+    @IBOutlet weak var btnProfileView: UIButton!
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        btnLinkedInSignIn.enabled = true
+        btnLinkedInSignIn.alpha = 1.0
+        btnProfileView.enabled = false
+        btnProfileView.alpha = 0.5
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        //checkExistingAccessToken()
     }
-
-
+    
+    func checkExistingAccessToken() {
+        
+    }
 }
 
