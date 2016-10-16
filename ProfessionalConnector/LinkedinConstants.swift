@@ -14,7 +14,9 @@ struct Constants {
         static let BaseURL = "https://www.linkedin.com/uas/oauth2"
         static let AuthorizationEndPoint = "authorization"
         static let AccessTokenEndPoint = "accessToken"
-        static let RedirectURI = "https://www.pretentiousgeek.me/oauth"
+        static let RedirectURI = "redirect_uri"
+        static let RedirectURL = "https://www.pretentiousgeek.me/oauth"
+        static let escapedRedirectURL = Constants.Linkedin.RedirectURL.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.alphanumericCharacterSet())!
     }
     
     struct LinkedinAuthorization {
@@ -26,8 +28,6 @@ struct Constants {
             static let APIKey = "client_id"
             
             static let APISecret = "client_secret"
-            
-            static let RedirectURI = "redirect_uri"
             
             static let State = "state"
             
@@ -46,8 +46,6 @@ struct Constants {
             static let APISecret = "Your_API_Secret"
             
             static let State = "linkedin\(Int(NSDate().timeIntervalSince1970))"
-            
-            static let RedirectURL = Constants.Linkedin.RedirectURI.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.alphanumericCharacterSet())!
             
             static let BasicScope = "r_basicprofile"
             
