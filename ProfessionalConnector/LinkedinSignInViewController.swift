@@ -8,3 +8,10 @@
 
 import UIKit
 
+class LinkedinSignInViewController: UIViewController {
+
+    @IBOutlet weak var webView: UIWebView!
+
+
+}
+
