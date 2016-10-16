@@ -36,6 +36,7 @@ struct Constants {
             static let Format = "format"
         }
         
+        
         struct ParameterValues {
             
             static let ResponseType = "code"
@@ -45,21 +46,20 @@ struct Constants {
             static let APISecret = "Your_API_Secret"
             
             static let State = "linkedin\(Int(NSDate().timeIntervalSince1970))"
-          
+            
             static let RedirectURL = Constants.Linkedin.RedirectURI.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.alphanumericCharacterSet())!
             
             static let BasicScope = "r_basicprofile"
             
             static let EmailScope = "r_emailaddress"
             
-            static let Format = "json"
-
+            static let JSONFormat = "json"
+            
         }
     }
     
     struct LinkedinAccessToken {
         static let URL = Constants.Linkedin.BaseURL+"/"+Constants.Linkedin.AccessTokenEndPoint
     }
-    
 }
 
