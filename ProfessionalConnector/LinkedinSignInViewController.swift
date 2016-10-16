@@ -33,6 +33,10 @@ class LinkedinSignInViewController: UIViewController, UIWebViewDelegate {
         
         print(authorizationURLString)
         
+        // Create a URL request and load it in the web view.
+        let request = NSURLRequest(URL: NSURL(string: authorizationURLString)!)
+        webView.loadRequest(request)
+        
     }
 
 }
