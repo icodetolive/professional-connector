@@ -38,6 +38,43 @@ class LinkedinSignInViewController: UIViewController, UIWebViewDelegate {
         webView.loadRequest(request)
         
     }
+    
+    //before a webview begins loading a new frame, this function returns a Bool value - if the webview should begin loading the new content
+    //    A response containing authorization code somehwat looks like this:
+    
+    //"Your_redirect_URI?code="returned_auth_code&state="state_set_constants"
+    func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        
+        //get access to the URL through the request parameter
+        let url = request.URL!
+        
+        
+        print("Url::\(url)")
+        if url.absoluteString.rangeOfString("error") != nil {
+            print("user pressed cancel")
+            dismissViewControllerAnimated(true, completion: nil)
+        }
+        
+        //examine the host property of the url to ensure if it's the authorization callback url set as per the app settings
+        if url.host == "www.pretentiousgeek.me" {
+            
+            //state check to prevent CSRF attack
+            let urlComponents = url.absoluteString.componentsSeparatedByString("?")
+            //            let state =
+            //make sure, authorization code is contained
+            if url.absoluteString.rangeOfString("code") != nil {
+                
+                //Extract authorization code
+                let code = urlComponents[1].componentsSeparatedByString("=")[1]
+                
+                requestForAccessToken(code)
+            }
+        }
+        
+        return true
+    }
+    
+    
 
 }
 
